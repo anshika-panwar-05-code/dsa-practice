@@ -1,0 +1,30 @@
+// User function Template for Java
+import java.util.*;
+class Solution {
+    static String removeChars(String str1, String str2) {
+        // flag banaya check kiya for equal h toh break kar diya 
+nhi toh stringbuilder m apppend kar diya
+        StringBuilder str= new StringBuilder("");
+        
+        char[] ch1= str1.toCharArray();
+        char[] ch2= str2.toCharArray();
+        
+        
+        for(int i=0;i<ch1.length;i++){
+            boolean found=false;
+            for(int j=0;j<ch2.length;j++){
+                
+                if(ch1[i]==ch2[j]){
+                    found=true;
+                    break;
+          
+                }
+            }
+            if(!found){
+                str.append(ch1[i]);
+            }
+        }
+        return str.toString();
+      
+    }
+}
