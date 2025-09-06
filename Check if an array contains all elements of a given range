@@ -1,0 +1,30 @@
+class Main {
+    public static void main(String[] args) {
+      int[] arr= {1 ,4, 5 ,2, 7 ,8 ,3};
+      int A= 2;
+      int B=5;
+      //phle chacke karenge range ko fir chalangyenge nested loop agar j==i break kar denge
+
+      
+      if(A>B){
+          System.out.println("false");
+      }
+      
+      for(int i=A;i<B;i++){
+          boolean found= false;
+          for(int j=0;j<arr.length;j++){
+              if(arr[j]==i){
+                  found=true;
+                  break;
+              }
+          }
+          
+          if(!found){
+              System.out.println("false");
+          }
+          
+      }
+       System.out.println("true");
+      
+    }
+}
