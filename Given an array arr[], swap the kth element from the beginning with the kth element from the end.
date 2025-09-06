@@ -1,0 +1,17 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int k = 2;
+        int n = arr.length;
+
+        //for forwardk-1
+for backward n-k
+        int temp = arr[k-1];
+        arr[k-1] = arr[n-k];
+        arr[n-k] = temp;
+
+        System.out.println(Arrays.toString(arr));
+    }
+}
