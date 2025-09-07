@@ -1,0 +1,31 @@
+// User function Template for Java
+
+
+input:
+A = choice 
+B = chancE
+Output: 4
+Explanation: characters at position 0, 1, 4 and 5
+are same in the two strings A and B.
+
+
+import java.util.*;
+
+class Solution {
+    int sameChar(String A, String B) {
+   
+       int count=0;
+       int n=Math.min(A.length(),B.length());
+       
+       A=A.toLowerCase();
+       B=B.toLowerCase();
+       
+       
+       for(int i=0;i<n;i++){
+           if(A.charAt(i)==B.charAt(i)){
+               count++;
+           }
+       }
+       return count;
+    }
+}
