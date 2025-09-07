@@ -1,0 +1,33 @@
+class Solution {
+    public static void findSmallestAndLargest(String str) {
+  
+        String[] words = str.split(" ");
+
+        // initialize with first word
+        String smallest = words[0];
+        String largest = words[0];
+
+        // check every word
+        for (int i = 1; i < words.length; i++) {
+            String word = words[i];
+
+            // compare for smallest
+            if (word.length() < smallest.length()) {
+                smallest = word;
+            }
+
+            // compare for largest
+            if (word.length() > largest.length()) {
+                largest = word;
+            }
+        }
+
+        System.out.println("Smallest word: " + smallest);
+        System.out.println("Largest word: " + largest);
+    }
+
+    public static void main(String[] args) {
+        String s = "This is a test string"\
+        findSmallestAndLargest(s);
+    }
+}
