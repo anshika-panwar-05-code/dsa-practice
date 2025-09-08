@@ -1,0 +1,13 @@
+class Solution {
+    public String is_AutomorphicNumber(int n) {
+        // Code here
+      int mul=n*n;
+      
+    n=n%10;
+      
+      if(n==mul%10){
+          return "Automorphic";
+      }
+        return "Not Automorphic";
+    }
+}
