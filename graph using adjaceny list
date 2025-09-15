@@ -1,0 +1,39 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+       int[][] edgeList = {
+            {1, 2}, {2, 3}, {3, 4}, {4, 2}, {1, 3}
+        };
+        
+        Map<Integer,List<Integer>> graph= new HashMap<>();
+        
+        for(int[] edge:edgeList){
+            int a=edge[0];
+            int b=edge[1];
+            
+            if(!graph.containsKey(a)){
+                graph.put(a,new ArrayList<>());
+            }
+            graph.get(a).add(b);
+            
+            if(!graph.containsKey(b)){
+                graph.put(b,new ArrayList<>());
+            }
+            graph.get(b).add(a);
+        }
+        printGraph(graph);
+    }
+    
+    
+    static void printGraph(Map<Integer,List<Integer>> graph){
+        for(Map.Entry<Integer,List<Integer>> entry:graph.entrySet()){
+             System.out.print("Node " + entry.getKey() + ", n: ");
+            for(int n:entry.getValue()){
+                 System.out.print(n + " ");
+            }
+        }
+         System.out.println();
+    }
+}
