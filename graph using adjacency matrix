@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class Main {
+    
+    // Function to print graph using adjacency matrix
+    static void printGraph(int[][] adjacencyMatrix) {
+        int n = adjacencyMatrix.length;
+        for (int i = 0; i < n; i++) {
+            System.out.print("Node " + i + " -> Neighbors: ");
+            for (int j = 0; j < n; j++) {
+                if (adjacencyMatrix[i][j] == 1) {
+                    System.out.print(j + " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        // Edge list (undirected graph)
+        int[][] edgeList = {
+            {1, 2}, {2, 3}, {3, 4}, {4, 2}, {1, 3}
+        };
+
+        int n = 5; // number of nodes (0 to 4)
+        int[][] adjacencyMatrix = new int[n][n];
+
+        // Build adjacency matrix
+        for (int[] edge : edgeList) {
+            int a = edge[0];
+            int b = edge[1];
+
+            // Undirected graph => mark both [a][b] and [b][a]
+            adjacencyMatrix[a][b] = 1;
+            adjacencyMatrix[b][a] = 1;
+        }
+
+        // Print adjacency matrix as graph
+        printGraph(adjacencyMatrix);
+    }
+}
